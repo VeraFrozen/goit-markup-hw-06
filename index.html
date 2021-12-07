@@ -411,11 +411,11 @@
         <!--О нас-->
                 <div class="contacts-box">
                     <div class="address">
-                <!--Логотип-->
+        <!--Логотип-->
                         <div class="logo-type">
                             <a href="./index.html" class="link logo-footer"><span class="logo-accent">Web</span>Studio</a>
                         </div>
-                <!--Контакты-->
+        <!--Контакты-->
                         <address class="contacts-address">
                             <ul class="contacts-list list">
                                 <li class="contacts-item">
@@ -473,9 +473,31 @@
                         </li>
                     </ul>
                 </div>
+        <!--Подписывайся на рассылку-->
+                <div class="subscribe-form">
+                    <form class="footer-form">
+                        <div class="footer-form-field">
+                            <div class="footer-email-input">
+                                <label class="footer-form-label">
+                                    <span class="footer-label-text">Подпишитесь на рассылку</span>
+                                    <input type="email" class="footer-form-input" name="mail" placeholder="E-mail">
+                                </label>
+                            </div>
+                            <button class="footer-button" type="submit">
+                                <div class="footer-button-box">
+                                    <span class="input-button-text">Подписаться</span>
+                                    <svg class="subscribe-icon" width="24" height="24">
+                                        <use href="./images/symbol-defs.svg#icon-Logo-6"></use>
+                                    </svg>
+                                </div>
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>    
         </section>
     </footer>
+    <!--Модальное окно-->
     <div class="backdrop is-hidden" data-modal>
         <div class="modal">
             <buton type="button" class="modal-close" data-modal-close>
@@ -483,6 +505,19 @@
                     <use href="./images/symbol-defs.svg#icon-close"></use>
                 </svg>
             </buton>
+            <form class="form">
+                <label class="form-label">
+                  <span class="label-text">Username</span>
+                  <input type="text" class="form-input" name="username" placeholder="Jacob Mercer">
+                </label>
+              
+                <label class="form-label">
+                  <span class="label-text">Email</span>
+                  <input type="email" class="form-input" name="mail" placeholder="jacob@mail.com">
+                </label>
+              
+                <button type="submit">Submit</button>
+              </form>
         </div>
     </div> 
     <script src="./js/modal.js"></script>   
