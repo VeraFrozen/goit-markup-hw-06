@@ -826,7 +826,7 @@ url(../images/hero.jpg);
 
 .modal {
     width: 530px;
-    min-height: 600px;
+    min-height: 580px;
     background-color: var(--primary-white-color);
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
@@ -838,30 +838,45 @@ url(../images/hero.jpg);
     transition: transform 1000ms;
 }
 
+/*Закрытие окна*/
 .close-field {
     width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
     position: relative;
-    margin-top: 8px;
-    margin-right: 8px;
+    margin-top: -32px;
+    margin-right: -32px;
     margin-bottom: 2px;
 }
 
 .modal-close-circle {
     position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 30px;
     height: 30px;
     background-color: transparent;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.15);
     border-radius: 50%;
-    position: absolute;
-    top: 14px;
-    right: 14px;
-    top: 50%;
-    left: 12px;
+    right: -32px;
     fill: var(--title-text-color);
-    transform: translateY(-50%);
+    cursor: pointer;
 }
 
+.modal-close-circle:focus,
+.modal-close-circle:hover {
+    border-color: transparent;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-close-circle:focus,
+.modal-close-circle:hover .modal-close-icon {
+    fill: var(--accent-color);
+}
+
+/*формы для ввода данных*/
 .modal-form {
     width: 100%;
 }
@@ -910,6 +925,7 @@ margin-bottom: 10px;
 .form-input:focus {
     outline: none;
     border: 1px solid var(--accent-color);
+    transition:  background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-form-icon {
@@ -922,8 +938,10 @@ margin-bottom: 10px;
 
 .form-input:focus + .modal-form-icon {
     fill: var(--accent-color);
+    transition:  background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/*Комментарий*/
 .comment-form {
     margin-bottom: 20px;
 }
@@ -944,10 +962,17 @@ margin-bottom: 10px;
     color: rgba(117, 117, 117, 0.5);
 }
 
-.checkbox {
+/*Чексбокс*/
+.checkbox-form {
     display: inline-block;
-    padding-left: 10px;
+    padding-left: 30px;
     margin-bottom: 30px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.71;
+    letter-spacing: 0.03em;
+    color: var(--primary-text-color);
 }
 
 .checkbox-input {
@@ -958,52 +983,48 @@ margin-bottom: 10px;
     border: 1px solid rgba(33, 33, 33, 0.2);
     box-sizing: border-box;
     border-radius: 2px;
-    position: relative;
+    position: absolute;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
+    margin-left: -20px;
+    margin-top: 4px;
 }
 
 .checkbox-icon {
-    display: inline-block;
+    position: absolute;
     width: 16px;
     height: 15px;
     border: 1px solid var(--title-text-color);
     border-radius: 2px;
-    margin-right: 7px;
+    margin-right: 10px;
+    margin-left: -20px;
+    margin-top: 4px;
 }
 
-.checkbox:checked + .checkbox-icon {
-    position: absolute;
+.checkbox-input:checked + .checkbox-icon {
     background-color: var(--accent-color);
     border-color: var(--accent-color);
-    background-image: url('../images/pointer.svg');
+    background-image: url('../images/marker1.svg');
     background-size: contain;
     background-origin: border-box;
-}
-
-.checkbox-text {
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 1.71;
-    letter-spacing: 0.03em;
-    color: var(--primary-text-color);
-    margin-right: 2px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .checkbox-link {
+    display: inline-block;
     text-decoration: underline;
     font-size: 14px;
     color: var(--accent-color);
+    margin-left: 2px;
 }
 
+/*Кнопка в модальном окне*/
 .modal-button {
+    display: block;
     min-width: 200px;
     height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin-left: 125px;
     padding: 10px 55px;
     font-family: inherit;
     font-style: normal;
@@ -1017,12 +1038,12 @@ margin-bottom: 10px;
     cursor: pointer;
     border-radius: 4px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-    transition:  background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-button:hover,
 .modal-button:focus {
     background-color: var(--accent-button);
+    transition:  background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .is-hidden {
